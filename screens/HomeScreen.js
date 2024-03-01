@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flexDirection: "column",
     justifyContent: "space-around",
-    width: "80%",
+    width: "90%",
   },
 });
 
