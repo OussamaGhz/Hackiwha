@@ -1,23 +1,31 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, StyleSheet, Text, View, Image } from 'react-native';
-import { Button } from 'react-native-paper';
+import React from "react";
+import { StatusBar } from "expo-status-bar";
+import { ImageBackground, StyleSheet, Text, View, Image } from "react-native";
+import { Button } from "react-native-paper";
 
 export default function MagentaScreen() {
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('./img/bg.png')} resizeMode="cover" style={styles.background}>
+      <ImageBackground
+        source={require("../assets/bg.png")}
+        resizeMode="cover"
+        style={styles.background}
+      >
         <View style={styles.content}>
-          <Image source={require('./img/kids.png')} style={styles.image} />
+          <Image source={require("../assets/kids.png")} style={styles.image} />
           <Text style={styles.h1}>Registrasi kamu berhasil!</Text>
-          <Text style={styles.p}>Ayo buat akun untuk buah hati dan mulai belajar di KidsLand</Text>
+          <Text style={styles.p}>
+            Ayo buat akun untuk buah hati dan mulai belajar di KidsLand
+          </Text>
           <View style={styles.buttons}>
-            <Button mode="contained" style={styles.btns} labelStyle={styles.btnText}>
-              Login
+            <Button
+              mode="contained"
+              style={styles.btns}
+              labelStyle={styles.btnText}
+            >
+              Create a child account
             </Button>
-            <Button mode="contained" style={styles.btns} labelStyle={styles.btnText}>
-              Signup
-            </Button>
+          
           </View>
         </View>
       </ImageBackground>
@@ -63,9 +71,10 @@ const styles = StyleSheet.create({
   },
   btns: {
     backgroundColor: "#FFFFFF",
-    paddingVertical: 15,
+    
     paddingHorizontal: 45,
-    marginBottom: 20,
+    marginBottom: 30,
+    borderRadius: 100,
     borderRadius: 5,
     borderWidth: 2, // Add border
     borderColor: "#7A20A0", // Border color

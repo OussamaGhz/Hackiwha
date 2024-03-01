@@ -35,9 +35,9 @@ const SignupScreen = ({ navigation }) => {
         setPassword("");
         setPhoneNumber("");
         setChecked(false);
+        navigation.navigate("MagentaScreen");
       })
       .catch((error) => {
-        // Handle signup error
         alert("Signup failed");
         console.error(error);
       });
