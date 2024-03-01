@@ -1,20 +1,13 @@
 import React, { useState } from "react";
-import { Checkbox } from "react-native-paper";
-import { Button } from "react-native-paper";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+import { Button, TextInput } from "react-native-paper";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const SignupScreen = () => {
+const SignupScreen = ({ navigation }) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [agreed, setAgreed] = useState(false);
   const [checked, setChecked] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   const handleSignup = () => {
     // Perform form validation
@@ -50,8 +43,18 @@ const SignupScreen = () => {
       });
   };
 
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.returnButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Text style={styles.returnButtonText}>Return</Text>
+      </TouchableOpacity>
       <Text style={styles.boldText}>Signup</Text>
       <View style={styles.formContainer}>
         <Text style={styles.label}>Name:</Text>
@@ -65,7 +68,7 @@ const SignupScreen = () => {
         <Text style={styles.label}>Phone Number:</Text>
         <TextInput
           style={styles.input}
-          keyboardType="numeric" // Add this line to make the input only accept numbers
+          keyboardType="numeric"
           value={phoneNumber}
           onChangeText={setPhoneNumber}
           placeholder="Enter your phone number"
@@ -76,17 +79,16 @@ const SignupScreen = () => {
           value={password}
           onChangeText={setPassword}
           placeholder="Enter your password"
+          secureTextEntry={!passwordVisible}
+          right={
+            <TextInput.Icon
+              rippleColor={"#7A1FA0"}
+              name={passwordVisible ? "eye-off" : "eye"}
+              color={"#7A1FA0"} // Change the color of the icon here
+              onPress={togglePasswordVisibility}
+            />
+          }
         />
-
-        <View style={styles.checkboxContainer}>
-          <Checkbox
-            status={checked ? "checked" : "unchecked"}
-            onPress={() => setChecked(!checked)}
-          />
-          <Text style={styles.checkboxLabel}>
-            Agree to terms and conditions
-          </Text>
-        </View>
 
         <Button mode="contained" onPress={handleSignup}>
           Signup
@@ -106,16 +108,21 @@ const SignupScreen = () => {
   );
 };
 
-// Styles...
-
-
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
     justifyContent: "center",
+  },
+  returnButton: {
+    position: "absolute",
+    top: 16,
+    left: 16,
+    zIndex: 1,
+  },
+  returnButtonText: {
+    color: "#7A1FA0",
+    fontSize: 16,
   },
   boldText: {
     color: "#7A1FA0",
@@ -131,7 +138,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 4,
-    padding: 8,
+    padding: 3,
     marginBottom: 16,
   },
   checkboxContainer: {
@@ -149,7 +156,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 16,
     color: "black",
-
   },
   loginButton: { color: "#7A1FA0" },
 });
