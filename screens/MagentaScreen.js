@@ -13,9 +13,9 @@ export default function MagentaScreen({ navigation }) {
       >
         <View style={styles.content}>
           <Image source={require("../assets/kids.png")} style={styles.image} />
-          <Text style={styles.h1}>Registrasi kamu berhasil!</Text>
+          <Text style={styles.h1}>Your registration is successful!</Text>
           <Text style={styles.p}>
-            Ayo buat akun untuk buah hati dan mulai belajar di KidsLand
+            Come on, create an account for your little one and let him have fun
           </Text>
           <View style={styles.buttons}>
             <Button

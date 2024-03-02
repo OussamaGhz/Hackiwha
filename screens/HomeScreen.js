@@ -13,14 +13,13 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <View style={styles.textContainer}>
-          <Text style={styles.boldText}>
-            Accusamus est porro rem odio sed doloremque voluptate mollitia.
-          </Text>
+          <Text style={styles.boldText}>Oh hi! Welcome to SYPLIFY</Text>
           <Text style={styles.descriptionText}>
-            Ipsam quibusdam deserunt illo voluptatem. Non et ipsam ducimus et.
-            Adipisci et mollitia nesciunt autem repudiandae est et. Sit iusto
-            aut vel laboriosam dolores fugit sed et eum. Pariatur praesentium
-            omnis. Sint ut autem cumque.
+            oh hi! welcome to SYPLIFY SIMPLIFY is an AAC app. It's a type of
+            mobile application designed to help individuals who have difficulty
+            speaking or communicating effectively use alternative methods to
+            express themselves and interact with others. These apps typically
+            utilize various features to facilitate communication/
           </Text>
         </View>
         <View style={styles.buttonContainer}>
