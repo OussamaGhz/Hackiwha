@@ -14,29 +14,31 @@ const LoginScreen = ({ navigation }) => {
       return;
     }
 
+    navigation.navigate("Main")
+
     // Perform login logic
     // Example: Send login request to server
     // You can replace this with your own implementation
-    fetch("https://api.example.com/login", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle login success
-        alert("Login successful");
-        // Reset form fields
-        setUsername("");
-        setPassword("");
-      })
-      .catch((error) => {
-        // Handle login error
-        alert("Login failed");
-        console.error(error);
-      });
+    // fetch("https://api.example.com/login", {
+    //   method: "POST",
+    //   body: JSON.stringify({ username, password }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     // Handle login success
+    //     alert("Login successful");
+    //     // Reset form fields
+    //     setUsername("");
+    //     setPassword("");
+    //   })
+    //   .catch((error) => {
+    //     // Handle login error
+    //     alert("Login failed");
+    //     console.error(error);
+    //   });
   };
 
   const togglePasswordVisibility = () => {
