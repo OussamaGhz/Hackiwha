@@ -1,11 +1,30 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 
 const Games = () => {
   return (
-    <View style={styles.container}>
-      <Text>Hello, World!</Text>
-    </View>
+    <>
+      <View style={styles.container}>
+        <View style={styles.textContainer}>
+          <Text style={styles.boldText}>Hello there body</Text>
+          <Text style={styles.descreptionText}>Come learn and have fun</Text>
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            source={require("../assets/communication-assets/image1.png")}
+          />
+          <Image
+            style={styles.image}
+            source={require("../assets/communication-assets/image2.png")}
+          />
+          <Image
+            style={styles.image}
+            source={require("../assets/communication-assets/image3.png")}
+          />
+        </View>
+      </View>
+    </>
   );
 };
 

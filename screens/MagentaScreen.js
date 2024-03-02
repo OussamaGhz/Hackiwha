@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { ImageBackground, StyleSheet, Text, View, Image } from "react-native";
 import { Button } from "react-native-paper";
 
-export default function MagentaScreen() {
+export default function MagentaScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -25,7 +25,14 @@ export default function MagentaScreen() {
             >
               Create a child account
             </Button>
-          
+            <Button
+              mode="contained"
+              style={styles.btns}
+              labelStyle={styles.btnText}
+              onPress={() => navigation.navigate("Main")}
+            >
+              Continue
+            </Button>
           </View>
         </View>
       </ImageBackground>
@@ -71,9 +78,9 @@ const styles = StyleSheet.create({
   },
   btns: {
     backgroundColor: "#FFFFFF",
-    
+
     paddingHorizontal: 45,
-    marginBottom: 30,
+    marginBottom: 10,
     borderRadius: 100,
     borderRadius: 5,
     borderWidth: 2, // Add border

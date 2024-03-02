@@ -16,31 +16,33 @@ const SignupScreen = ({ navigation }) => {
       return;
     }
 
+    navigation.navigate("MagentaScreen")
+
     // Perform signup logic
     // Example: Send signup request to server
     // You can replace this with your own implementation
-    fetch("https://api.example.com/signup", {
-      method: "POST",
-      body: JSON.stringify({ name, password, phoneNumber }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Handle signup success
-        alert("Signup successful");
-        // Reset form fields
-        setName("");
-        setPassword("");
-        setPhoneNumber("");
-        setChecked(false);
-        navigation.navigate("MagentaScreen");
-      })
-      .catch((error) => {
-        alert("Signup failed");
-        console.error(error);
-      });
+    // fetch("https://api.example.com/signup", {
+    //   method: "POST",
+    //   body: JSON.stringify({ name, password, phoneNumber }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     // Handle signup success
+    //     alert("Signup successful");
+    //     // Reset form fields
+    //     setName("");
+    //     setPassword("");
+    //     setPhoneNumber("");
+    //     setChecked(false);
+    //     navigation.navigate("MagentaScreen");
+    //   })
+    //   .catch((error) => {
+    //     alert("Signup failed");
+    //     console.error(error);
+    //   });
   };
 
   const togglePasswordVisibility = () => {

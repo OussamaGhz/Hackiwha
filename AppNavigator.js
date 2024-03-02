@@ -6,6 +6,7 @@ import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
 import MagentaScreen from "./screens/MagentaScreen";
 import BottomTabNavigator from "./BottomTabNavigator";
+import feelings from "./tabs/feelings";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Signup" component={SignupScreen} />
         <Stack.Screen name="MagentaScreen" component={MagentaScreen} />
         <Stack.Screen name="Main" component={BottomTabNavigator} />
+        <Stack.Screen name="feelings" component={feelings} />
       </Stack.Navigator>
     </NavigationContainer>
   );
